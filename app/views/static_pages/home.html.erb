@@ -15,17 +15,29 @@
       </div>  
     <% else %>
       <div class="center hero-unit">
-        <h1>Welcome to the Sample App</h1>
+        <h1>Welcome to second-hand shop</h1>
 
-        <h2>
-          This is the home page for the
-          <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-          sample application.
-        </h2>
+         <div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><p align="center"><%= link_to image_tag("1.jpg", alt: "book1")%></p></div>
+    <div class="item"><p align="center"><%= link_to image_tag("2.jpg", alt: "book2") %></p></div>
+    <div class="item"><p align="center"><%= link_to image_tag("12.jpg", alt: "book3") %></p></div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 
-        <%= link_to "Sign up now!", signup_path, 
+        <%= link_to "Create my own shop!", signup_path, 
                                     class: "btn btn-large btn-primary" %>
       </div>
 
-      <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+     
     <% end %> 
+  

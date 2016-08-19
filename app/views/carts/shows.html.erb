@@ -1,0 +1,22 @@
+
+<h2>Check Your Parking Space<h2>  
+
+
+
+<table align="center">
+<form >
+	<% @cart.line_items.each do |item| %>  
+	<tr ><%= item.lot.title %></tr> 
+  
+</tr>
+  
+  
+</form>
+
+<% end %>
+</table>  
+
+
+<%= button_to 'Empty Cart', @orders, method: :delete, confirm: 'Are you sure?' %> 
+<%= link_to 'Confirm your parking space', new_order_path %> |
+<%= link_to 'Back', lots_path %>

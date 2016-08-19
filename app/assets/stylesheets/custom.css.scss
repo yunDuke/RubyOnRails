@@ -229,3 +229,14 @@
         margin-bottom: 5px;
       }
     } 
+    .pagination{
+  background: white;
+  cursor: default;
+  height: 22px;
+  a,span,em{
+    padding:0.2em 0.5em;
+    display: block;
+    float:left;
+    margin-right: 1px;
+  }
+}

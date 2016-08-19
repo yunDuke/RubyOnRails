@@ -6,6 +6,7 @@ gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'carrierwave'
+gem 'paperclip'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,7 +24,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -51,3 +54,4 @@ gem 'bootstrap-sass', '2.3.2.0'
     gem 'sprockets', '2.11.0'
     
     gem 'bcrypt-ruby', '3.1.2'
+      gem 'rails-simple-search'

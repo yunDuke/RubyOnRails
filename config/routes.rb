@@ -1,17 +1,33 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :lines
 
+  resources :line_items
+
+  resources :carts
+
+  resources :orders
+
+ 
+
+  resources :lots
+
+  
   resources :users  
   resources :sessions, only: [:new, :create, :destroy] 
 
   root to: 'static_pages#home'
-  match '/products', to: 'static_pages#products' , via: 'get'
-  match '/about',   to: 'static_pages#about', via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/carparks', to: 'lots#new' , via: 'get'
+  match '/maps', to: 'lots#index' , via: 'get'
+  match '/m',to:'static_pages#map', via:'get'
   match '/signup',  to: 'users#new', via: 'get'
-  match '/signin',  to: 'sessions#new', via: 'get'         
+  match '/signin',  to: 'sessions#new', via: 'get'  
+        match '/signupnew',  to: 'users#new', via: 'get'  
   match '/signout', to: 'sessions#destroy', via: :delete
+   match '/map',  to: 'lots#map', via: 'get'
+     match '/reserve',  to: 'orders#new', via: 'get'
+ match '/search', to: 'search#search', via: 'get'
   resources :microposts, only: [:create, :destroy]  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115200720) do
+ActiveRecord::Schema.define(version: 20150402143318) do
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rest"
+    t.integer  "qu"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "lot_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order_id"
+    t.integer  "quantity",   default: 1
+  end
+
+  create_table "lines", force: true do |t|
+    t.integer  "lot_id"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lots", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "num"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "markerText"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image"
+    t.integer  "rest"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -22,13 +59,16 @@ ActiveRecord::Schema.define(version: 20141115200720) do
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
-  create_table "products", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "image_url"
+  create_table "orders", force: true do |t|
+    t.string   "carplate"
+    t.string   "time"
+    t.string   "genre"
+    t.integer  "amount"
+    t.integer  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "price",       precision: 8, scale: 2, default: 0.0
+    t.integer  "line_item"
+    t.integer  "lot_id"
   end
 
   create_table "users", force: true do |t|

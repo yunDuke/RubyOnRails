@@ -1,0 +1,46 @@
+<%= form_for(@lot , :html => {:multipart => true}) do |f| %>
+  <% if @lot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+
+      <ul>
+      <% @lot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :num %><br>
+    <%= f.number_field :num %>
+  </div>
+   <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image%>
+  </div>
+ <!--  -->
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :markerText %><br>
+    <%= f.text_field :markerText %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

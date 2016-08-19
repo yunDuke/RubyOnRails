@@ -12,8 +12,8 @@ class UsersController < ApplicationController
         @user = User.new(secure_params)
         if @user.save
           sign_in @user       #  NEW LINE
-      flash[:success] = "Welcome to the Sample App!"    # NEW LINE
-      redirect_to @user
+      flash[:success] = "Welcome to the CAR PARK SEARCH!"    # NEW LINE
+      redirect_to carparks_path
         else
             render 'new'# Handle an unsuccessful save.     
         end

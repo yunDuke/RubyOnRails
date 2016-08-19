@@ -1,0 +1,27 @@
+<%= form_for(@order) do |f| %>
+ 
+  
+<% @order.lines.each do |item| %>  
+  <tr ><%= item.lot.title %></tr> 
+  <%end%>
+  <div class="field">
+    <%= f.label :carplate %><br>
+    <%= f.text_field :carplate %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.number_field :cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

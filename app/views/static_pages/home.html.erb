@@ -1,21 +1,6 @@
-    <% if signed_in? %>
-      <div class="row">
-        <aside class="span4">
-          <section>
-            <%= render 'shared/user_info' %>
-          </section>
-          <section>
-            <%= render 'shared/micropost_form' %>
-          </section>
-        </aside>
-        <div class="span8">
-              <h3>Micropost Feed</h3>
-              <%= render 'shared/feed' %>
-            </div>
-      </div>  
-    <% else %>
-      <div class="center hero-unit">
-        <h1>Welcome to second-hand shop</h1>
+
+        <h1>Welcome to CAR PARK SEARCH</h1>
+       
 
          <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
@@ -25,19 +10,20 @@
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item"><p align="center"><%= link_to image_tag("1.jpg", alt: "book1")%></p></div>
-    <div class="item"><p align="center"><%= link_to image_tag("2.jpg", alt: "book2") %></p></div>
-    <div class="item"><p align="center"><%= link_to image_tag("12.jpg", alt: "book3") %></p></div>
+    <div class="active item"><p align="center"><%= link_to image_tag("1.jpg", alt: "carpark1")%></p></div>
+    <div class="item"><p align="center"><%= link_to image_tag("2.jpg", alt: "carpark2") %></p></div>
+    <div class="item"><p align="center"><%= link_to image_tag("12.jpg", alt: "carpark3") %></p></div>
   </div>
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
-
-        <%= link_to "Create my own shop!", signup_path, 
+<center>
+        <%= link_to "SIGN UP FOR CAR PARK!", signup_path, 
                                     class: "btn btn-large btn-primary" %>
+                                  </center>
       </div>
 
      
-    <% end %> 
+
   
